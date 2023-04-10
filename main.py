@@ -53,3 +53,5 @@ bird_dy += gravity
   screen.blit(score_text, (10, 10))
 
   pygame.display.update()
+
+  clock.tick(60)
