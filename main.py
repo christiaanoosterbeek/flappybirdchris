@@ -20,3 +20,12 @@ pipe_width = 50
 pipe_gap_y = 300
 score = 0
 font = pygame.font.SysFont(None, 40)
+
+while True:
+  for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+      pygame.quit()
+      quit()
+    if event.type == pygame.KEYDOWN:
+      if event.key == pygame.K_SPACE:
+        bird_dy = -10
