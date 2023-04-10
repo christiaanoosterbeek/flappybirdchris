@@ -29,3 +29,15 @@ while True:
     if event.type == pygame.KEYDOWN:
       if event.key == pygame.K_SPACE:
         bird_dy = -10
+bird_dy += gravity
+  bird_y += bird_dy
+  pipe_x += pipe_dy
+  if pipe_x < -pipe_width:
+    pipe_x = screen_width
+    score += 1
+  if bird_y < 0 or bird_y > screen_height:
+    pygame.quit()
+    quit()
+  if pipe_x < 200 and (bird_y < pipe_gap_y or bird_y > pipe_gap_y + gap_size):
+    pygame.quit()
+    quit()
