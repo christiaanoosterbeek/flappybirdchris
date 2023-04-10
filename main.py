@@ -51,3 +51,5 @@ bird_dy += gravity
                      (int(screen_width / 2), int(bird_y)), 20)
   score_text = font.render("Score: " + str(score), True, (255, 255, 255))
   screen.blit(score_text, (10, 10))
+
+  pygame.display.update()
