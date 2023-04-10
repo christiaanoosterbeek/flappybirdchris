@@ -41,3 +41,13 @@ bird_dy += gravity
   if pipe_x < 200 and (bird_y < pipe_gap_y or bird_y > pipe_gap_y + gap_size):
     pygame.quit()
     quit()
+
+   screen.fill((135, 206, 250))
+  pygame.draw.rect(screen, (0, 255, 0), (pipe_x, 0, pipe_width, pipe_gap_y))
+  pygame.draw.rect(screen, (0, 255, 0),
+                   (pipe_x, pipe_gap_y + gap_size, pipe_width,
+                    screen_height - pipe_gap_y - gap_size))
+  pygame.draw.circle(screen, (255, 255, 0),
+                     (int(screen_width / 2), int(bird_y)), 20)
+  score_text = font.render("Score: " + str(score), True, (255, 255, 255))
+  screen.blit(score_text, (10, 10))
